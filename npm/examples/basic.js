@@ -17,7 +17,7 @@ const api = new commentgeneratorAPI({
 var query = {
   mode: "text",
   tone: "positive",
-  count: 5,
+  count: 1,
   emojis: true
 };
 
