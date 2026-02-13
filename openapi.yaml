@@ -1,56 +1,55 @@
 openapi: 3.0.4
 info:
   title: Comment Generator
-  description: Comment Generator is a simple tool for generating comments for social media. It returns a list of comments based on the input parameters.
+  description: >-
+    Comment Generator is a simple tool for generating comments for social media.
+    It returns a list of comments based on the input parameters.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/commentgenerator:
     get:
-      summary: Generate Comments for Social Media
-      description: Comment Generator is a simple tool for generating comments for social media. It returns a list of comments based on the input parameters.
+      summary: Generate Text Post Comments
+      description: Generate comments for text-based social media posts
       operationId: commentgenerator
       parameters:
-      - name: mode
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The mode of comment generation (text or picture)
-        example: text
-      - name: tone
-        default: positive
-        in: query
-        schema:
-          type: string
-        required: false
-        description: The tone of the comments. Defaults to positive (positive, negative, neutral)
-        example: positive
-      - name: count
-        default: '5'
-        in: query
-        schema:
-          type: integer
-        required: false
-        description: The number of comments to generate. Defaults to 5 (max 10)
-        example: '5'
-      - name: emojis
-        default: true
-        in: query
-        schema:
-          type: boolean
-        required: false
-        description: Whether to include emojis in the comments. Defaults to true (true or false)
-        example: true
+        - name: mode
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The mode of comment generation
+          example: text
+        - name: tone
+          in: query
+          schema:
+            type: string
+          required: false
+          description: The tone of the comments
+          example: positive
+        - name: count
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: The number of comments to generate (max 10)
+          example: 5
+        - name: emojis
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Whether to include emojis in the comments
+          example: true
       responses:
         '200':
           description: Successful Response
@@ -66,27 +65,29 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   count: 5
                   mode: text
                   tone: positive
                   comments:
-                  - "Great take on this is absolutely fantastic \U0001F60D"
-                  - "Great way to put it really connects \U0001F525"
-                  - "Important message is perfection \U0001F60A"
-                  - "Excellent explanation is unforgettable \U0001F60D"
-                  - "Precise and insightful is perfection \U0001F44F"
+                    - You're so right! is a game-changer Wow! 😍
+                    - Inspiring stuff gives me all the feels Wow! ✨
+                    - Thanks for sharing this gives me all the feels Perfect! 💯
+                    - Exactly my thoughts is on fire Wow beyond! 🌟
+                    - >-
+                      Great outlook in everything here, very bright! slays! For
+                      sure! 😊
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -94,4 +95,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
