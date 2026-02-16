@@ -44,7 +44,12 @@ from apiverve_commentgenerator.apiClient import CommentgeneratorAPIClient
 # Initialize the client with your APIVerve API key
 api = CommentgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "mode": "text", "tone": "positive", "count": 1, "emojis": true }
+query = {
+    "mode": "text",
+    "tone": "positive",
+    "count": 1,
+    "emojis": true
+}
 
 try:
     # Make the API call
@@ -82,7 +87,12 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "mode": "text", "tone": "positive", "count": 1, "emojis": true }
+query = {
+    "mode": "text",
+    "tone": "positive",
+    "count": 1,
+    "emojis": true
+}
 ```
 
 ###### Simple Request
@@ -129,7 +139,12 @@ from apiverve_commentgenerator.apiClient import CommentgeneratorAPIClient, Comme
 
 api = CommentgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "mode": "text", "tone": "positive", "count": 1, "emojis": true }
+query = {
+    "mode": "text",
+    "tone": "positive",
+    "count": 1,
+    "emojis": true
+}
 
 try:
     result = api.execute(query)
@@ -150,7 +165,12 @@ from apiverve_commentgenerator.apiClient import CommentgeneratorAPIClient, Comme
 
 api = CommentgeneratorAPIClient("[YOUR_API_KEY]")
 
-query = { "mode": "text", "tone": "positive", "count": 1, "emojis": true }
+query = {
+    "mode": "text",
+    "tone": "positive",
+    "count": 1,
+    "emojis": true
+}
 
 try:
     result = api.execute(query)
@@ -184,7 +204,12 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_commentgenerator.apiClient import CommentgeneratorAPIClient, CommentgeneratorAPIClientError
 
-query = { "mode": "text", "tone": "positive", "count": 1, "emojis": true }
+query = {
+    "mode": "text",
+    "tone": "positive",
+    "count": 1,
+    "emojis": true
+}
 
 # Using context manager ensures proper cleanup
 with CommentgeneratorAPIClient("[YOUR_API_KEY]") as api:
@@ -210,7 +235,12 @@ from apiverve_commentgenerator.apiClient import CommentgeneratorAPIClient
 # Enable debug mode
 api = CommentgeneratorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "mode": "text", "tone": "positive", "count": 1, "emojis": true }
+query = {
+    "mode": "text",
+    "tone": "positive",
+    "count": 1,
+    "emojis": true
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -225,8 +255,14 @@ from apiverve_commentgenerator.apiClient import CommentgeneratorAPIClient
 
 api = CommentgeneratorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "mode": "text",
+    "tone": "positive",
+    "count": 1,
+    "emojis": true
+}
+
 try:
-    query = { "mode": "text", "tone": "positive", "count": 1, "emojis": true }
     result = api.execute(query)
     print(result)
 finally:
