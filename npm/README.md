@@ -135,11 +135,11 @@ async function makeRequest() {
     "mode": "text",
     "tone": "positive",
     "comments": [
-      "Great take on this is absolutely fantastic 😍",
-      "Great way to put it really connects 🔥",
-      "Important message is perfection 😊",
-      "Excellent explanation is unforgettable 😍",
-      "Precise and insightful is perfection 👏"
+      "You're so right! is a game-changer Wow! 😍",
+      "Inspiring stuff gives me all the feels Wow! ✨",
+      "Thanks for sharing this gives me all the feels Perfect! 💯",
+      "Exactly my thoughts is on fire Wow beyond! 🌟",
+      "Great outlook in everything here, very bright! slays! For sure! 😊"
     ]
   }
 }
