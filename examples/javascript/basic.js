@@ -13,7 +13,14 @@ const API_URL = 'https://api.apiverve.com/v1/commentgenerator';
  */
 async function callCommentGeneratorAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            mode: &#x27;text&#x27;,
+            tone: &#x27;positive&#x27;,
+            emojis: true
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
