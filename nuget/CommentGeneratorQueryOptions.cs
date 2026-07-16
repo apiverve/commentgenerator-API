@@ -26,12 +26,12 @@ namespace APIVerve.API.CommentGenerator
         /// The number of comments to generate (max 10)
         /// </summary>
         [JsonProperty("count")]
-        public string Count { get; set; }
+        public int? Count { get; set; }
 
         /// <summary>
         /// Whether to include emojis in the comments
         /// </summary>
         [JsonProperty("emojis")]
-        public string Emojis { get; set; }
+        public bool? Emojis { get; set; }
     }
 }
