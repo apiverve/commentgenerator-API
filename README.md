@@ -193,11 +193,37 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Comment Generator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "count": 5,
+    "mode": "text",
+    "tone": "positive",
+    "comments": [
+      "You're so right! is a game-changer Wow! 😍",
+      "Inspiring stuff gives me all the feels Wow! ✨",
+      "Thanks for sharing this gives me all the feels Perfect! 💯",
+      "Exactly my thoughts is on fire Wow beyond! 🌟",
+      "Great outlook in everything here, very bright! slays! For sure! 😊"
+    ]
+  }
 }
 ```
 
