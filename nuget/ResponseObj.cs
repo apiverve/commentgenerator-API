@@ -25,12 +25,15 @@ namespace APIVerve.API.CommentGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("count")]
-        public long Count { get; set; }
+        public long? Count { get; set; }
 
         [JsonProperty("mode")]
         public string Mode { get; set; }
@@ -40,5 +43,17 @@ namespace APIVerve.API.CommentGenerator
 
         [JsonProperty("comments")]
         public string[] Comments { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
