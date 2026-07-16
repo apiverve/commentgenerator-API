@@ -1,0 +1,49 @@
+{
+    "name": "apiverve/commentgenerator",
+    "description": "Comment Generator is a simple tool for generating comments for social media. It returns a list of comments based on the input parameters.",
+    "version": "1.2.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "APIVerve",
+            "email": "hello@apiverve.com",
+            "homepage": "https://apiverve.com"
+        }
+    ],
+    "keywords": [
+        "api",
+        "apiverve",
+        "commentgenerator",
+        "comment generator",
+        "comment generation",
+        "comment generate",
+        "comment api",
+        "comment tool"
+    ],
+    "homepage": "https://apiverve.com/marketplace/commentgenerator?utm_source=php&utm_medium=homepage",
+    "support": {
+        "email": "hello@apiverve.com",
+        "docs": "https://docs.apiverve.com/ref/commentgenerator",
+        "source": "https://github.com/apiverve/commentgenerator-API/tree/main/php"
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "APIVerve\\Commentgenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "APIVerve\\Commentgenerator\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
