@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.CommentGenerator;
 
 class Program
 {
@@ -60,11 +60,11 @@ class Program
         // Initialize the API client
         var apiClient = new CommentGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    mode = "text",
-    tone = "positive",
-    count = 1,
-    emojis = true
+        var queryOptions = new CommentGeneratorQueryOptions {
+    Mode = "text",
+    Tone = "positive",
+    Count = 1,
+    Emojis = true
 };
 
         // Make the API call
@@ -119,7 +119,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CommentGenerator;
 
 public class Example
 {
@@ -127,11 +127,11 @@ public class Example
     {
         var apiClient = new CommentGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    mode = "text",
-    tone = "positive",
-    count = 1,
-    emojis = true
+        var queryOptions = new CommentGeneratorQueryOptions {
+    Mode = "text",
+    Tone = "positive",
+    Count = 1,
+    Emojis = true
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -154,7 +154,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.CommentGenerator;
 
 public class Example
 {
@@ -162,11 +162,11 @@ public class Example
     {
         var apiClient = new CommentGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    mode = "text",
-    tone = "positive",
-    count = 1,
-    emojis = true
+        var queryOptions = new CommentGeneratorQueryOptions {
+    Mode = "text",
+    Tone = "positive",
+    Count = 1,
+    Emojis = true
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -194,7 +194,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CommentGenerator;
 
 public class Example
 {
@@ -202,11 +202,11 @@ public class Example
     {
         var apiClient = new CommentGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    mode = "text",
-    tone = "positive",
-    count = 1,
-    emojis = true
+        var queryOptions = new CommentGeneratorQueryOptions {
+    Mode = "text",
+    Tone = "positive",
+    Count = 1,
+    Emojis = true
 };
 
         try
@@ -249,7 +249,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.CommentGenerator;
 
 public class Example
 {
@@ -261,11 +261,11 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    mode = "text",
-    tone = "positive",
-    count = 1,
-    emojis = true
+        var queryOptions = new CommentGeneratorQueryOptions {
+    Mode = "text",
+    Tone = "positive",
+    Count = 1,
+    Emojis = true
 };
 
         try
@@ -305,11 +305,11 @@ var apiClient = new CommentGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    mode = "text",
-    tone = "positive",
-    count = 1,
-    emojis = true
+var queryOptions = new CommentGeneratorQueryOptions {
+    Mode = "text",
+    Tone = "positive",
+    Count = 1,
+    Emojis = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,11 +334,11 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    mode = "text",
-    tone = "positive",
-    count = 1,
-    emojis = true
+var queryOptions = new CommentGeneratorQueryOptions {
+    Mode = "text",
+    Tone = "positive",
+    Count = 1,
+    Emojis = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -355,11 +355,11 @@ var apiClient = new CommentGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    mode = "text",
-    tone = "positive",
-    count = 1,
-    emojis = true
+var queryOptions = new CommentGeneratorQueryOptions {
+    Mode = "text",
+    Tone = "positive",
+    Count = 1,
+    Emojis = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -370,11 +370,11 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    mode = "text",
-    tone = "positive",
-    count = 1,
-    emojis = true
+var queryOptions = new CommentGeneratorQueryOptions {
+    Mode = "text",
+    Tone = "positive",
+    Count = 1,
+    Emojis = true
 };
 
 using (var apiClient = new CommentGeneratorAPIClient("[YOUR_API_KEY]"))
@@ -398,11 +398,11 @@ using (var apiClient = new CommentGeneratorAPIClient("[YOUR_API_KEY]"))
     "mode": "text",
     "tone": "positive",
     "comments": [
-      "Great take on this is absolutely fantastic 😍",
-      "Great way to put it really connects 🔥",
-      "Important message is perfection 😊",
-      "Excellent explanation is unforgettable 😍",
-      "Precise and insightful is perfection 👏"
+      "You're so right! is a game-changer Wow! 😍",
+      "Inspiring stuff gives me all the feels Wow! ✨",
+      "Thanks for sharing this gives me all the feels Perfect! 💯",
+      "Exactly my thoughts is on fire Wow beyond! 🌟",
+      "Great outlook in everything here, very bright! slays! For sure! 😊"
     ]
   }
 }
